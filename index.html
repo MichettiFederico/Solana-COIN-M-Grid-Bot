@@ -128,7 +128,7 @@
   </footer>
 
   <script>
-    // Validamos el acceso mediante hash SHA-256 de las llaves
+    // Hashes de seguridad para autenticación sin exponer las llaves en texto plano
     const ALLOWED_HASHES = [
       "d755da9ee8000b9aeb61765103c8096f2a6df70783fecaaeb695782ec9ccf6dc",
       "e3065eb009f45f95f4aa4283842f1f516dcd8e154bb3f78dc3b5c6e83884ffce"
@@ -167,7 +167,7 @@
         badge.className = "inline-flex items-center gap-1.5 px-3 py-1 text-xs rounded-full bg-green-500/10 text-green-400 border border-green-500/20 font-medium";
       };
 
-      // 2. Fetch periódico de status.json y last_log.json exportados por la VPS
+      // 2. Fetch periódico de status.json y last_log.json
       async function fetchBotState() {
         try {
           const resStatus = await fetch('status.json?t=' + Date.now());
@@ -207,4 +207,3 @@
   </script>
 </body>
 </html>
-
